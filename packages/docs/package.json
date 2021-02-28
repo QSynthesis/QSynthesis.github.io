@@ -1,0 +1,20 @@
+{
+  "name": "QSynthesis",
+  "version": "0.1.11",
+  "description": "Cross-platform vocal synthesis frontend",
+  "main": "1",
+  "repository": "https://github.com/QSynthesis/QSynthesis.github.io",
+  "author": "SJTU",
+  "license": "GPL v3",
+  "private": true,
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  },
+  "scripts": {
+	"d": "vuepress dev docs",
+    "b": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "b": "vue-cli-service build"
+  }
+}

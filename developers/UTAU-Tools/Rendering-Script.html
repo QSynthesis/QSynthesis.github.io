@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UTAU 渲染脚本 | QSynthesis</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="跨平台声音合成前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.aa7d6d99.css" as="style"><link rel="preload" href="/assets/js/app.d60adcd7.js" as="script"><link rel="preload" href="/assets/js/2.345a887f.js" as="script"><link rel="preload" href="/assets/js/21.53493268.js" as="script"><link rel="prefetch" href="/assets/js/10.50eb3ee0.js"><link rel="prefetch" href="/assets/js/11.081655a9.js"><link rel="prefetch" href="/assets/js/12.6f8f11c5.js"><link rel="prefetch" href="/assets/js/13.b36cf816.js"><link rel="prefetch" href="/assets/js/14.2b508fe3.js"><link rel="prefetch" href="/assets/js/15.cbe5b4cb.js"><link rel="prefetch" href="/assets/js/16.02f2fddb.js"><link rel="prefetch" href="/assets/js/17.6955188b.js"><link rel="prefetch" href="/assets/js/18.5520594c.js"><link rel="prefetch" href="/assets/js/19.b60c68c0.js"><link rel="prefetch" href="/assets/js/20.a64c524d.js"><link rel="prefetch" href="/assets/js/22.5defe11f.js"><link rel="prefetch" href="/assets/js/23.d68ea42e.js"><link rel="prefetch" href="/assets/js/24.5ad6548d.js"><link rel="prefetch" href="/assets/js/25.d52737f2.js"><link rel="prefetch" href="/assets/js/26.de766b57.js"><link rel="prefetch" href="/assets/js/27.6c4101aa.js"><link rel="prefetch" href="/assets/js/28.36c88c49.js"><link rel="prefetch" href="/assets/js/29.60b17915.js"><link rel="prefetch" href="/assets/js/3.2e8d1d0a.js"><link rel="prefetch" href="/assets/js/30.e0903c75.js"><link rel="prefetch" href="/assets/js/31.78977ad2.js"><link rel="prefetch" href="/assets/js/32.388d20b7.js"><link rel="prefetch" href="/assets/js/33.516a0b9d.js"><link rel="prefetch" href="/assets/js/34.8ec2049d.js"><link rel="prefetch" href="/assets/js/35.9e30116f.js"><link rel="prefetch" href="/assets/js/36.3e58a529.js"><link rel="prefetch" href="/assets/js/4.17557a6a.js"><link rel="prefetch" href="/assets/js/5.b6434887.js"><link rel="prefetch" href="/assets/js/6.06f75ec4.js"><link rel="prefetch" href="/assets/js/7.a90f8f0a.js"><link rel="prefetch" href="/assets/js/8.f5f489dd.js"><link rel="prefetch" href="/assets/js/9.c59a0468.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.aa7d6d99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">QSynthesis</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/src/About/" class="nav-link">
+  使用手册
+</a></div><div class="nav-item"><a href="/developers/" class="nav-link router-link-active">
+  开发者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="了解更多" class="mobile-dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          API
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/zh/api/cli.html" class="nav-link">
+  CLI
+</a></li><li class="dropdown-subitem"><a href="/zh/api/node.html" class="nav-link">
+  Node
+</a></li></ul></li><li class="dropdown-item"><h4>
+          开发指南
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/zh/miscellaneous/local-development.html" class="nav-link">
+  本地开发
+</a></li><li class="dropdown-subitem"><a href="/zh/miscellaneous/design-concepts.html" class="nav-link">
+  设计理念
+</a></li><li class="dropdown-subitem"><a href="/zh/faq/" class="nav-link">
+  FAQ
+</a></li><li class="dropdown-subitem"><a href="/zh/miscellaneous/glossary.html" class="nav-link">
+  术语
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/zh/miscellaneous/migration-guide.html" class="nav-link">
+  从 0.x 迁移
+</a></li><li class="dropdown-subitem"><a href="https://github.com/vuejs/vuepress/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="选择语言" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="选择语言" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/developers/UTAU-Tools/Rendering-Script.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/src/About/" class="nav-link">
+  使用手册
+</a></div><div class="nav-item"><a href="/developers/" class="nav-link router-link-active">
+  开发者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="了解更多" class="mobile-dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          API
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/zh/api/cli.html" class="nav-link">
+  CLI
+</a></li><li class="dropdown-subitem"><a href="/zh/api/node.html" class="nav-link">
+  Node
+</a></li></ul></li><li class="dropdown-item"><h4>
+          开发指南
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/zh/miscellaneous/local-development.html" class="nav-link">
+  本地开发
+</a></li><li class="dropdown-subitem"><a href="/zh/miscellaneous/design-concepts.html" class="nav-link">
+  设计理念
+</a></li><li class="dropdown-subitem"><a href="/zh/faq/" class="nav-link">
+  FAQ
+</a></li><li class="dropdown-subitem"><a href="/zh/miscellaneous/glossary.html" class="nav-link">
+  术语
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/zh/miscellaneous/migration-guide.html" class="nav-link">
+  从 0.x 迁移
+</a></li><li class="dropdown-subitem"><a href="https://github.com/vuejs/vuepress/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="选择语言" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="选择语言" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/developers/UTAU-Tools/Rendering-Script.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="utau-渲染脚本"><a href="#utau-渲染脚本" class="header-anchor">#</a> UTAU 渲染脚本</h1> <p><a href="https://ch.nicovideo.jp/delta_kimigatame/blomaga/ar429837" target="_blank" rel="noopener noreferrer">原文链接（日语）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 原作者：<a href="https://twitter.com/delta_kuro" target="_blank" rel="noopener noreferrer">delta_kuro<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <hr> <ul><li><a href="#utau-%E6%B8%B2%E6%9F%93%E8%84%9A%E6%9C%AC">UTAU 渲染脚本</a> <ul><li><a href="#%E5%A3%B0%E6%98%8E">声明</a></li> <li><a href="#%E6%B8%B2%E6%9F%93%E8%84%9A%E6%9C%AC%E7%9A%84%E4%BD%8D%E7%BD%AE">渲染脚本的位置</a> <ul><li><a href="#%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%A4%B9">临时文件夹</a></li> <li><a href="#%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6">脚本文件</a></li></ul></li> <li><a href="#%E6%B8%B2%E6%9F%93%E8%84%9A%E6%9C%AC%E7%9A%84%E4%BD%9C%E7%94%A8">渲染脚本的作用</a> <ul><li><a href="#%E5%8D%95%E6%A0%B8%E5%A4%84%E7%90%86">单核处理</a> <ul><li><a href="#tempbat">temp.bat</a></li> <li><a href="#temp_helperbat">temp_helper.bat</a></li></ul></li> <li><a href="#%E5%A4%9A%E6%A0%B8%E5%A4%84%E7%90%86">多核处理</a> <ul><li><a href="#tempbat-1">temp.bat</a></li> <li><a href="#%E5%85%B6%E4%BB%96%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6">其他批处理文件</a></li></ul></li></ul></li> <li><a href="#%E6%B8%B2%E6%9F%93%E8%84%9A%E6%9C%AC%E7%9A%84%E5%86%85%E5%AE%B9">渲染脚本的内容</a> <ul><li><a href="#tempbat-%E9%A1%B5%E9%A6%96">temp.bat 页首</a></li> <li><a href="#tempbat-%E6%AD%A3%E6%96%87">temp.bat 正文</a> <ul><li><a href="#%E5%AF%B9%E4%BA%8E%E4%BC%91%E6%AD%A2%E7%AC%A6">对于休止符</a></li> <li><a href="#%E5%AF%B9%E4%BA%8E%E9%99%A4%E4%BC%91%E6%AD%A2%E7%AC%A6%E4%BB%A5%E5%A4%96%E7%9A%84%E9%9F%B3%E7%AC%A6">对于除休止符以外的音符</a></li></ul></li> <li><a href="#temp_helperbat-%E5%86%85%E5%AE%B9">temp_helper.bat 内容</a> <ul><li><a href="#%E4%B8%8Eust%E6%97%A0%E5%85%B3%E7%9A%84%E6%8C%87%E4%BB%A4">[与ust无关的指令]</a></li></ul></li> <li><a href="#tempbat-%E9%A1%B5%E8%84%9A">temp.bat 页脚</a> <ul><li><a href="#%E4%B8%8Eust%E6%97%A0%E5%85%B3%E7%9A%84%E6%8C%87%E4%BB%A4-1">[与ust无关的指令]</a></li></ul></li></ul></li></ul></li></ul> <h2 id="声明"><a href="#声明" class="header-anchor">#</a> 声明</h2> <p>本文依据个人分析所写，因此可能存在少量不严谨。另外，翻译过程中补充了一些内容。</p> <h2 id="渲染脚本的位置"><a href="#渲染脚本的位置" class="header-anchor">#</a> 渲染脚本的位置</h2> <h3 id="临时文件夹"><a href="#临时文件夹" class="header-anchor">#</a> 临时文件夹</h3> <p>一般地，UTAU 启动后，会在<strong>系统环境变量为 TEMP 的路径下</strong>创建后台工作目录 <code>utauX</code>（X为正整数，由于utau可以多开，按启动顺序依次递增），用来存放合成脚本文件。</p> <p>一般是这样一个文件夹：<code>C:\user\&lt;user名&gt;\AppData\Local\Temp\utau1\</code></p> <h3 id="脚本文件"><a href="#脚本文件" class="header-anchor">#</a> 脚本文件</h3> <p>一般会产生以下两个文件。</p> <ul><li>temp.bat</li> <li>temp_helper.bat</li></ul> <p>如果使用了 UTAU 的多核渲染，那么不会产生 helper，会产生以下文件，具体数量与线程数相同。</p> <ul><li>temp.bat</li> <li>temp1.bat</li> <li>temp2.bat</li> <li>temp3.bat</li> <li>...</li></ul> <h2 id="渲染脚本的作用"><a href="#渲染脚本的作用" class="header-anchor">#</a> 渲染脚本的作用</h2> <h3 id="单核处理"><a href="#单核处理" class="header-anchor">#</a> 单核处理</h3> <h4 id="temp-bat"><a href="#temp-bat" class="header-anchor">#</a> temp.bat</h4> <ul><li>从UTAU直接启动</li> <li>将各种参数存在批处理的变量中</li> <li>对于休止符，直接启动wavtool</li></ul> <h4 id="temp-helper-bat"><a href="#temp-helper-bat" class="header-anchor">#</a> temp_helper.bat</h4> <ul><li>从temp.bat中启动</li> <li>将temp.bat中设定的参数发送给resampler和wavtool</li></ul> <h3 id="多核处理"><a href="#多核处理" class="header-anchor">#</a> 多核处理</h3> <h4 id="temp-bat-2"><a href="#temp-bat-2" class="header-anchor">#</a> temp.bat</h4> <ul><li>一次性调用合成器，在最后启动。</li></ul> <h4 id="其他批处理文件"><a href="#其他批处理文件" class="header-anchor">#</a> 其他批处理文件</h4> <ul><li>在合成开始后同时启动重采样器，并行进程。</li> <li>所有进程结束后启动 <code>temp.bat</code>。</li></ul> <p><strong>本文只讨论单核渲染的批处理文件。</strong></p> <h2 id="渲染脚本的内容"><a href="#渲染脚本的内容" class="header-anchor">#</a> 渲染脚本的内容</h2> <h3 id="temp-bat-页首"><a href="#temp-bat-页首" class="header-anchor">#</a> temp.bat 页首</h3> <p><strong>@rem project</strong><br>
+工程文件名</p> <p><strong>@set loadmodule</strong><br>
+模块的设定？似乎一直是空白的</p> <p><strong>@set tempo</strong><br>
+工程曲速</p> <p><strong>@set samples</strong><br>
+采样频率</p> <p><strong>@set oto</strong><br>
+音源文件夹的完整路径</p> <p><strong>@set tool</strong><br>
+合成引擎 (wavtool)的完整路径</p> <p><strong>@set resamp</strong><br>
+重采样引擎(resampler) 的完整路径</p> <p><strong>@set output</strong><br>
+temp.wav的相对路径</p> <p><strong>@set helper</strong><br>
+temp_helper.bat的路径</p> <p><strong>@set cachedir</strong><br>
+缓存文件夹的路径</p> <p><strong>@set flag</strong><br>
+全局Flags</p> <p><strong>@set env</strong><br>
+默认音量包络</p> <p><strong>@set stp</strong><br>
+定义变量stp</p> <p><strong>@del &quot;%output%&quot; 2&gt;nul</strong><br>
+如果temp.wav存在，则将它删掉<br>
+&quot;2&gt;nul&quot;指的是不输出错误信息</p> <p><strong>@mkdir &quot;%cachedir%&quot; 2&gt;nul</strong><br>
+创建缓存文件夹</p> <h3 id="temp-bat-正文"><a href="#temp-bat-正文" class="header-anchor">#</a> temp.bat 正文</h3> <h4 id="对于休止符"><a href="#对于休止符" class="header-anchor">#</a> 对于休止符</h4> <p><strong>@&quot;%tool%&quot; &quot;%output%&quot;&quot;%oto%\R.wav&quot; 0 480@120+0.0 0 0</strong><br>
+直接调用wavtool</p> <blockquote><ul><li>第一个参数：输出文件</li> <li>第二个参数：在原音设定文件夹下的R.wav<code>（似乎用这个来识别休止符）</code></li> <li>第三个参数：stp<code>（休止符为0）</code></li> <li>第四个参数：输出的实际长度
+<ul><li>格式：音长@tempo+校正值</li> <li>校正值 = 先行声音（校正后）+ 末端偏移<br>
+详见 <a href="/developers/UTAU-Backend/Length-Correction.html#音符实际长度与二次校正">咬合校正</a></li></ul></li> <li>第五个参数（以及后面一堆）：音量包络<code>（对于休止符:0 0）</code></li></ul></blockquote> <h4 id="对于除休止符以外的音符"><a href="#对于除休止符以外的音符" class="header-anchor">#</a> 对于除休止符以外的音符</h4> <p><strong>@set params=100 0 !120 AA#5#　<code>[必填]</code></strong><br>
+设定音调参数</p> <blockquote><ul><li>第一个参数：音量</li> <li>第二个参数：移调</li> <li>第三个参数：曲速<code>（格式：!tempo）</code></li> <li>第四个参数：音高曲线字符串</li></ul></blockquote> <p><strong>@set flag=&quot;g5&quot;</strong><br>
+设定 Flags</p> <blockquote><ul><li>一般是全局flags在后，音符flags在前</li> <li>出现同一个参数时，只有第一个有效</li> <li>当出现 e 或者 E 时，在前面添加反斜杠</li></ul></blockquote> <p><strong>@set env=0 5 35 0 100 100 0 70 0 10 100 <code>[必填]</code></strong><br>
+音量包络<code>（除了休止符，有三种格式，任选其一）</code></p> <blockquote><ul><li>p1 p2 p3 v1 v2 v3 v4 ove</li> <li>p1 p2 p3 v1 v2 v3 v4 ove p4</li> <li>p1 p2 p3 v1 v2 v3 v4 ove p4 p5 v5</li></ul></blockquote> <p><strong>@set stp=150</strong><br>
+设定 stp 数值</p> <p><strong>@set vel=100<code>【必填】</code></strong><br>
+辅音速度</p> <p><strong>@set temp=&quot;%cachedir%\1_あ_C4_OkgOOW.wav&quot;<code>【必填】</code></strong><br>
+缓存文件的路径</p> <blockquote><ul><li>文件名是 <code>[ust音符序号]_[歌词]_[音阶]_[六位英文数字].wav</code></li> <li>歌词中的<code>半角空格</code>会被替换为<code>“+”</code>，<code>“*”</code>替换为<code>“$”</code>，<code>“?”</code>替换为<code>“=”</code>，<code>正反斜杠</code>替换为<code>下划线</code>，其他文件名敏感符号直接忽略。</li> <li>乱码后缀意义不明（可能是随机生成）</li> <li>当对同一个音符进行操作后，通过改变文件名来区分缓存，这种方法比较好。</li></ul></blockquote> <p><strong>@echo ##########------------------------------(1/4)<code>【必填】</code></strong><br>
+显示合成进度</p> <p><strong>@call %helper% &quot;%oto%_おおうえあ.wav&quot; C4 480@120+70.0 30 3170.884 600 50.0 -1169.19 0<code>【必填】</code></strong><br>
+temp_helper.bat的启动指令</p> <blockquote><ul><li>第1个参数：采样的文件名(&quot;%oto%\あ.wav&quot;)</li> <li>第2个参数：渲染目标音阶名(C4)</li> <li>第3个参数：音符长度(与休止符相同)(480@120+70.0)</li> <li>第4个参数：先行发声(30)</li> <li>第5个参数：偏移(3170.884)</li> <li>第6个参数：resampler输出的声音长度(600)
+<ul><li>与wavtool结合前，没有经过裁剪直接输出的长度</li> <li>（第3个参数换算为ms后的长度+stp）/50，四舍五入以后再乘以50</li></ul></li> <li>第7个参数 固定范围(50.0)</li> <li>第8个参数 右侧空白(-1169.19)</li> <li>第9个参数 序号(0)
+<ul><li>多线程合成时这个参数如果错误可能引起问题</li></ul></li></ul></blockquote> <h3 id="temp-helper-bat-内容"><a href="#temp-helper-bat-内容" class="header-anchor">#</a> temp_helper.bat 内容</h3> <h4 id="与ust无关的指令"><a href="#与ust无关的指令" class="header-anchor">#</a> [与ust无关的指令]</h4> <p><strong>@if exist %temp%goto A</strong><br>
+如果存在缓存文件，那么跳过重采样步骤</p> <p><strong>@if exist&quot;%cachedir%%9_<em>.wav&quot; del &quot;%cachedir%%9_</em>.wav&quot;</strong><br>
+如果有相同序号但不同名称的文件，则删除</p> <p><strong>@&quot;%resamp%&quot;%1 %temp% %2 %vel% %flag% %5 %6 %7 %8 %params%</strong><br>
+启动重采样引擎（之前已经讲过）</p> <p><strong>:A</strong><br>
+提供给第一行跳跃的标签</p> <p><strong>@&quot;%tool%&quot;&quot;%output%&quot; %temp% %stp% %3 %env%</strong><br>
+启动合成引擎（与休止符一样）</p> <h3 id="temp-bat-页脚"><a href="#temp-bat-页脚" class="header-anchor">#</a> temp.bat 页脚</h3> <h4 id="与ust无关的指令-2"><a href="#与ust无关的指令-2" class="header-anchor">#</a> [与ust无关的指令]</h4> <p><strong>@if not exist&quot;%output%.whd&quot; goto E</strong><br> <strong>@if not exist&quot;%output%.dat&quot; goto E</strong><br>
+检查是否生成了 temp.whd 和 temp.dat。如果没有，跳过以下步骤。</p> <blockquote><p>当temp_helper.bat正在被调用时，还没有生成temp.wav，temp.whd与temp.dat已经生成了。</p></blockquote> <p><strong>copy /Y&quot;%output%.whd&quot; /B + &quot;%output%.dat&quot; /B &quot;%output%&quot;</strong><br>
+将 temp.whd 和 temp.dat 合并为 temp.wav。</p> <blockquote><p>#whd可能是 <code>wav head</code> 的意思。</p></blockquote> <p><strong>del &quot;%output%.whd&quot;</strong><br> <strong>del&quot;%output%.dat&quot;</strong><br>
+删除temp.whd与temp.dat。</p> <p><strong>:E</strong><br>
+跳过合并与删除过程的标签。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d60adcd7.js" defer></script><script src="/assets/js/2.345a887f.js" defer></script><script src="/assets/js/21.53493268.js" defer></script>
+  </body>
+</html>
