@@ -11,8 +11,7 @@
     "vuepress": "^1.8.2"
   },
   "scripts": {
-	"d": "vuepress dev docs",
-    "b": "vuepress build docs",
+    "d": "vuepress dev docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "b": "vue-cli-service build"
